@@ -1,0 +1,19 @@
+/* Please refer to style.scss for reading the style */
+/* Colors */
+/* Body Copy */
+/* Font */
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 13px;
+  min-height: 100vh;
+}
+
+main {
+  min-height: 90vh;
+}
+
+/*# sourceMappingURL=style.css.map */

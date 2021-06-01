@@ -88,6 +88,7 @@ main {
 .card > .profile-card > h3 {
   grid-area: date;
   color: #9eafc2;
+  font-weight: 500;
 }
 .card > .profile-card > #share-open {
   grid-area: share;

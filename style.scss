@@ -81,6 +81,7 @@ main {
     & > h3 {
       grid-area: date;
       color: config.$grayish-blue;
+      font-weight: config.$font-size-medium;
     }
 
     & > #share-open {

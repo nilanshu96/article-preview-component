@@ -90,7 +90,6 @@ main {
   color: #9eafc2;
 }
 .card > .profile-card > #share-open {
-  z-index: 1;
   grid-area: share;
   align-self: center;
   justify-self: flex-end;
@@ -99,6 +98,13 @@ main {
   border-radius: 50%;
   border: none;
 }
+.card > .profile-card button {
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+.card > .profile-card button:hover {
+  transform: scale(1.2);
+}
 .card > .profile-card > .share-options {
   position: absolute;
   width: 100%;
@@ -106,7 +112,7 @@ main {
   padding: 0 1.8rem;
   background-color: #48556a;
   border: inherit;
-  display: flex;
+  display: none;
   align-items: center;
   column-gap: 0.3rem;
 }

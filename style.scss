@@ -84,7 +84,6 @@ main {
     }
 
     & > #share-open {
-      z-index: 1;
       grid-area: share;
       align-self: center;
       justify-self: flex-end;
@@ -94,6 +93,15 @@ main {
       border: none;
     }
 
+    & button {
+      cursor: pointer;
+      transition: all .2s linear;
+    }
+
+    & button:hover {
+      transform: scale(1.2);
+    }
+
     & > .share-options {
       position: absolute;
       width: 100%;
@@ -101,7 +109,8 @@ main {
       padding: 0 1.8rem;
       background-color: config.$very-dark-grayish-blue;
       border: inherit;
-      display: flex;
+      // display: flex;
+      display: none;
       align-items: center;
       column-gap: 0.3rem;
 

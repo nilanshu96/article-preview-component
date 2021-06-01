@@ -83,7 +83,8 @@ main {
       color: config.$grayish-blue;
     }
 
-    & > .share-open {
+    & > #share-open {
+      z-index: 1;
       grid-area: share;
       align-self: center;
       justify-self: flex-end;
@@ -129,7 +130,7 @@ main {
         background: url(./images/icon-pinterest.svg) center no-repeat, transparent;
       }
 
-      & > .share-close {
+      & > #share-close {
         display: block;
         margin-left: auto;
         border-radius: 50%;

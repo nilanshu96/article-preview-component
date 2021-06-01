@@ -89,7 +89,8 @@ main {
   grid-area: date;
   color: #9eafc2;
 }
-.card > .profile-card > .share-open {
+.card > .profile-card > #share-open {
+  z-index: 1;
   grid-area: share;
   align-self: center;
   justify-self: flex-end;
@@ -129,7 +130,7 @@ main {
 .card > .profile-card > .share-options > #pinterest {
   background: url(./images/icon-pinterest.svg) center no-repeat, transparent;
 }
-.card > .profile-card > .share-options > .share-close {
+.card > .profile-card > .share-options > #share-close {
   display: block;
   margin-left: auto;
   border-radius: 50%;

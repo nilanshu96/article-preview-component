@@ -16,6 +16,7 @@ main {
   min-width: 20.43rem;
   border-radius: 0.8rem;
   position: relative;
+  overflow: hidden;
 
   & > .image-container {
     height: 12.5rem;
@@ -26,7 +27,7 @@ main {
   }
 
   & > h1,
-  p, .profile-card {
+  & > p, & > .profile-card {
     padding: 0 1.8rem;
   }
 
@@ -55,7 +56,7 @@ main {
     max-width: 100%;
     grid-template-rows: 50% 50%;
     grid-template-columns: 20% 60% 20%;
-    margin-bottom: 0.45rem;
+    padding-bottom: 0.45rem;
 
     & > .profile-pic {
       grid-area: image;
@@ -66,7 +67,7 @@ main {
       align-self: center;
     }
 
-    & > h2, h3 {
+    & > h2, & > h3 {
         font-size: 1em;
         margin-block-end: 0;
         margin-block-start: 0;
@@ -82,13 +83,59 @@ main {
       color: config.$grayish-blue;
     }
 
-    & > .share {
+    & > .share-open {
       grid-area: share;
       align-self: center;
       justify-self: flex-end;
-      background: url(./images/icon-share.svg) center no-repeat, config.$light-grayish-blue;
+      background: url(./images/icon-share.svg) no-repeat 50% 45%, config.$light-grayish-blue;
       padding: 1rem;
       border-radius: 50%;
+      border: none;
+    }
+
+    & > .share-options {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 0 1.8rem;
+      background-color: config.$very-dark-grayish-blue;
+      border: inherit;
+      display: flex;
+      align-items: center;
+      column-gap: 0.3rem;
+
+      & > h3 {
+        text-transform: uppercase;
+        color: config.$grayish-blue;
+        font-weight: config.$font-size-medium;
+        letter-spacing: 0.3rem;
+        font-size: 1em;
+      }
+
+      & > button {
+        padding: 1rem;
+        border: none;
+      }
+
+      & > #facebook {
+        background: url(./images/icon-facebook.svg) center no-repeat, transparent;
+      }
+
+      & > #twitter {
+        background: url(./images/icon-twitter.svg) center no-repeat, transparent;
+      }
+
+      & > #pinterest {
+        background: url(./images/icon-pinterest.svg) center no-repeat, transparent;
+      }
+
+      & > .share-close {
+        display: block;
+        margin-left: auto;
+        border-radius: 50%;
+        background: url(./images/icon-share-white.svg) no-repeat 50% 45%, config.$desaturated-dark-blue;
+        
+      }
     }
   }
 }

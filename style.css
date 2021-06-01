@@ -33,6 +33,7 @@ main {
   min-width: 20.43rem;
   border-radius: 0.8rem;
   position: relative;
+  overflow: hidden;
 }
 .card > .image-container {
   height: 12.5rem;
@@ -41,8 +42,7 @@ main {
   border-top-left-radius: 0.8rem;
   border-top-right-radius: 0.8rem;
 }
-.card > h1,
-.card p, .card .profile-card {
+.card > h1, .card > p, .card > .profile-card {
   padding: 0 1.8rem;
 }
 .card > h1 {
@@ -66,7 +66,7 @@ main {
   max-width: 100%;
   grid-template-rows: 50% 50%;
   grid-template-columns: 20% 60% 20%;
-  margin-bottom: 0.45rem;
+  padding-bottom: 0.45rem;
 }
 .card > .profile-card > .profile-pic {
   grid-area: image;
@@ -75,7 +75,7 @@ main {
   border-radius: 50%;
   align-self: center;
 }
-.card > .profile-card > h2, .card > .profile-card h3 {
+.card > .profile-card > h2, .card > .profile-card > h3 {
   font-size: 1em;
   margin-block-end: 0;
   margin-block-start: 0;
@@ -89,13 +89,51 @@ main {
   grid-area: date;
   color: #9eafc2;
 }
-.card > .profile-card > .share {
+.card > .profile-card > .share-open {
   grid-area: share;
   align-self: center;
   justify-self: flex-end;
-  background: url(./images/icon-share.svg) center no-repeat, #ecf2f8;
+  background: url(./images/icon-share.svg) no-repeat 50% 45%, #ecf2f8;
   padding: 1rem;
   border-radius: 50%;
+  border: none;
+}
+.card > .profile-card > .share-options {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0 1.8rem;
+  background-color: #48556a;
+  border: inherit;
+  display: flex;
+  align-items: center;
+  column-gap: 0.3rem;
+}
+.card > .profile-card > .share-options > h3 {
+  text-transform: uppercase;
+  color: #9eafc2;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+  font-size: 1em;
+}
+.card > .profile-card > .share-options > button {
+  padding: 1rem;
+  border: none;
+}
+.card > .profile-card > .share-options > #facebook {
+  background: url(./images/icon-facebook.svg) center no-repeat, transparent;
+}
+.card > .profile-card > .share-options > #twitter {
+  background: url(./images/icon-twitter.svg) center no-repeat, transparent;
+}
+.card > .profile-card > .share-options > #pinterest {
+  background: url(./images/icon-pinterest.svg) center no-repeat, transparent;
+}
+.card > .profile-card > .share-options > .share-close {
+  display: block;
+  margin-left: auto;
+  border-radius: 50%;
+  background: url(./images/icon-share-white.svg) no-repeat 50% 45%, #6d7f97;
 }
 
 /*# sourceMappingURL=style.css.map */

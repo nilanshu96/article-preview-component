@@ -111,7 +111,7 @@ main {
 }
 @media screen and (min-width: 890px) {
   .card > p {
-    gride-area: paragraph;
+    grid-area: paragraph;
   }
 }
 .card > .profile-card {

@@ -79,7 +79,7 @@ main {
     color: config.$desaturated-dark-blue;
 
     @include config.pc {
-      gride-area: paragraph;
+      grid-area: paragraph;
     }
   }
 

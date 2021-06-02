@@ -42,12 +42,26 @@ body {
   }
 }
 
+@keyframes slide-up-2 {
+    0% {
+        bottom: 100%;
+    }
+
+    100% {
+        bottom: 140%;
+    }
+}
+
 @mixin slide-up-animation {
     animation: slide-up 0.2s ease-in;
 }
 
+@mixin slide-up-2-animation {
+    animation: slide-up-2 0.2s ease-in;
+}
+
 @mixin pc {
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 890px) {
         @content
     }
 }

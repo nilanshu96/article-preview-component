@@ -25,7 +25,8 @@ main {
   @include config.pc {
     max-width: 732px;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 38.8% 61.8%;
+    overflow: visible;
     height: max-content;
     grid-template-rows: max-content max-content max-content;
     grid-template-areas:
@@ -38,13 +39,14 @@ main {
     height: 12.5rem;
     background: url(./images/drawers.jpg) 0% 25%;
     background-size: cover;
-    
 
     @include config.pc {
       grid-area: image;
       height: 100%;
       background: url(./images/drawers.jpg) 0% 50%;
       background-size: cover;
+      border-top-left-radius: 0.8rem;
+      border-bottom-left-radius: 0.8rem;
     }
   }
 
@@ -168,7 +170,36 @@ main {
       display: none;
       align-items: center;
       column-gap: 0.3rem;
+      border-bottom-left-radius: 0.8rem;
+      border-bottom-right-radius: 0.8rem;
       @include config.slide-up-animation;
+
+      @include config.pc {
+        bottom: 140%;
+        z-index: 1;
+        left: calc(67% - 1.8rem);
+        width: max-content;
+        border-radius: 0.8rem;
+        padding: 0rem 2rem;
+        height: 80%;
+        @include config.slide-up-2-animation;
+      }
+
+      & > .share-pointer {
+        display: none;
+
+        @include config.pc {
+          display: block;
+          position: absolute;
+          top: 65%;
+          left: 50%;
+          background-color: config.$very-dark-grayish-blue;
+          width: 2rem;
+          height: 2rem;
+          transform: rotate(45deg) translate(-50%);
+          z-index: -1;
+        }
+      }
 
       & > h3 {
         text-transform: uppercase;
@@ -176,6 +207,11 @@ main {
         font-weight: config.$font-size-medium;
         letter-spacing: 0.3rem;
         font-size: 1em;
+
+        @include config.pc {
+          margin-block-start: 0;
+          margin-block-end: 0;
+        }
       }
 
       & > button {
@@ -203,6 +239,10 @@ main {
         border-radius: 50%;
         background: url(./images/icon-share-white.svg) no-repeat 50% 45%,
           config.$desaturated-dark-blue;
+
+        @include config.pc {
+          display: none;
+        }
       }
     }
   }

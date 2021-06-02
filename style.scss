@@ -4,6 +4,10 @@ main {
   min-height: 90vh;
   display: flex;
   justify-content: center;
+
+  @include config.pc {
+    align-items: center;
+  }
 }
 
 .card {
@@ -18,17 +22,40 @@ main {
   position: relative;
   overflow: hidden;
 
+  @include config.pc {
+    max-width: 732px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: max-content;
+    grid-template-rows: max-content max-content max-content;
+    grid-template-areas:
+      "image head"
+      "image paragraph"
+      "image profile_card";
+  }
+
   & > .image-container {
     height: 12.5rem;
     background: url(./images/drawers.jpg) 0% 25%;
     background-size: cover;
-    border-top-left-radius: 0.8rem;
-    border-top-right-radius: 0.8rem;
+    
+
+    @include config.pc {
+      grid-area: image;
+      height: 100%;
+      background: url(./images/drawers.jpg) 0% 50%;
+      background-size: cover;
+    }
   }
 
   & > h1,
-  & > p, & > .profile-card {
+  & > p,
+  & > .profile-card {
     padding: 0 1.8rem;
+
+    @include config.pc {
+      padding: 0 2.4rem;
+    }
   }
 
   & > h1 {
@@ -36,12 +63,22 @@ main {
     margin-top: 2rem;
     margin-bottom: 1rem;
     color: config.$very-dark-grayish-blue;
+
+    @include config.pc {
+      grid-area: head;
+      margin-bottom: 0;
+      font-size: 1.3rem;
+    }
   }
 
   & > p {
     font-size: 1.05em;
     line-height: 1.6;
     color: config.$desaturated-dark-blue;
+
+    @include config.pc {
+      gride-area: paragraph;
+    }
   }
 
   & > .profile-card {
@@ -58,19 +95,35 @@ main {
     grid-template-columns: 20% 60% 20%;
     padding-bottom: 0.45rem;
 
+    @include config.pc {
+      grid-area: profile_card;
+      position: relative;
+      padding-bottom: 1.9rem;
+      margin-top: 0.6rem;
+      row-gap: 0.2rem;
+      grid-template-columns: 15% 65% 20%;
+    }
+
     & > .profile-pic {
       grid-area: image;
-      
+
       max-width: 75%;
       max-height: 75%;
+
+      @include config.pc {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
       border-radius: 50%;
       align-self: center;
     }
 
-    & > h2, & > h3 {
-        font-size: 1em;
-        margin-block-end: 0;
-        margin-block-start: 0;
+    & > h2,
+    & > h3 {
+      font-size: 1em;
+      margin-block-end: 0;
+      margin-block-start: 0;
     }
     & > h2 {
       grid-area: name;
@@ -88,7 +141,8 @@ main {
       grid-area: share;
       align-self: center;
       justify-self: flex-end;
-      background: url(./images/icon-share.svg) no-repeat 50% 45%, config.$light-grayish-blue;
+      background: url(./images/icon-share.svg) no-repeat 50% 45%,
+        config.$light-grayish-blue;
       padding: 1rem;
       border-radius: 50%;
       border: none;
@@ -96,7 +150,7 @@ main {
 
     & button {
       cursor: pointer;
-      transition: all .2s linear;
+      transition: all 0.2s linear;
     }
 
     & button:hover {
@@ -130,7 +184,8 @@ main {
       }
 
       & > #facebook {
-        background: url(./images/icon-facebook.svg) center no-repeat, transparent;
+        background: url(./images/icon-facebook.svg) center no-repeat,
+          transparent;
       }
 
       & > #twitter {
@@ -138,18 +193,17 @@ main {
       }
 
       & > #pinterest {
-        background: url(./images/icon-pinterest.svg) center no-repeat, transparent;
+        background: url(./images/icon-pinterest.svg) center no-repeat,
+          transparent;
       }
 
       & > #share-close {
         display: block;
         margin-left: auto;
         border-radius: 50%;
-        background: url(./images/icon-share-white.svg) no-repeat 50% 45%, config.$desaturated-dark-blue;
-        
+        background: url(./images/icon-share-white.svg) no-repeat 50% 45%,
+          config.$desaturated-dark-blue;
       }
     }
   }
 }
-
-

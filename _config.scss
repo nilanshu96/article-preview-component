@@ -45,3 +45,9 @@ body {
 @mixin slide-up-animation {
     animation: slide-up 0.2s ease-in;
 }
+
+@mixin pc {
+    @media screen and (min-width: 1200px) {
+        @content
+    }
+}

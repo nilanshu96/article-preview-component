@@ -2,7 +2,8 @@
 /* Colors */
 /* Body Copy */
 /* Font */
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
 }
@@ -17,6 +18,14 @@ body {
   background-color: #ecf2f8;
 }
 
+@keyframes slide-up {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
 main {
   min-height: 90vh;
   display: flex;
@@ -116,6 +125,7 @@ main {
   display: none;
   align-items: center;
   column-gap: 0.3rem;
+  animation: slide-up 0.2s ease-in;
 }
 .card > .profile-card > .share-options > h3 {
   text-transform: uppercase;

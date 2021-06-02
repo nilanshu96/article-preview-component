@@ -13,21 +13,35 @@ $body-font-size: 13px;
 
 /* Font */
 
-$font-family-manrope: 'Manrope', sans-serif;
+$font-family-manrope: "Manrope", sans-serif;
 $font-size-medium: 500;
 $font-size-bold: 700;
 
-html, body {
-    padding: 0;
-    margin: 0;
+html,
+body {
+  padding: 0;
+  margin: 0;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-size: $body-font-size;
-    min-height: 100vh;
-    background-color: $light-grayish-blue;
+  font-size: $body-font-size;
+  min-height: 100vh;
+  background-color: $light-grayish-blue;
+}
+
+@keyframes slide-up {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+@mixin slide-up-animation {
+    animation: slide-up 0.2s ease-in;
 }

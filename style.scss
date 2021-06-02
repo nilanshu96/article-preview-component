@@ -114,6 +114,7 @@ main {
       display: none;
       align-items: center;
       column-gap: 0.3rem;
+      @include config.slide-up-animation;
 
       & > h3 {
         text-transform: uppercase;
@@ -150,3 +151,5 @@ main {
     }
   }
 }
+
+

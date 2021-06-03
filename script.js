@@ -11,6 +11,7 @@ const toggleShareMenu = function(event) {
     if(isShareMenuOpen) {
         if(this.id === SHARE_CLOSE) {
             const shareOptions = event.target.parentNode;
+            shareOpenButton.style.background = "url(./images/icon-share.svg) no-repeat 50% 45%, #ecf2f8";
             shareOptions.style.display = "none";
             isShareMenuOpen = false;
         } else if (this.id === SHARE_OPEN) {

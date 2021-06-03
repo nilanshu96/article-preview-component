@@ -15,11 +15,13 @@ const toggleShareMenu = function(event) {
             isShareMenuOpen = false;
         } else if (this.id === SHARE_OPEN) {
             const shareOptions = event.target.parentNode.querySelector(".share-options");
+            event.target.style.background = "url(./images/icon-share.svg) no-repeat 50% 45%, #ecf2f8";
             shareOptions.style.display = "none";
             isShareMenuOpen = false;
         }
     } else {
         const shareOptions = event.target.parentNode.querySelector(".share-options");
+        event.target.style.background = "url(./images/icon-share-white.svg) no-repeat 50% 45%, #6d7f97";
         shareOptions.style.display = "flex";
         isShareMenuOpen = true;
     }
